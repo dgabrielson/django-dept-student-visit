@@ -1,0 +1,7 @@
+#django-autoslug
+dcg-autoslug
+django-formtools
+django-admin-export
+
+django-dept-classes
+django-dept-students

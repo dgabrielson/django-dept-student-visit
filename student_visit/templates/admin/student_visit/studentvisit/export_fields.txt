@@ -1,0 +1,7 @@
+id
+student
+student.student_number
+reason
+when
+agree
+sections.all

@@ -1,0 +1,3 @@
+"Visit Number","Student","Student Number","Reason","When","Agree","Sections"
+{% for o in object_list %}"{{ o.pk }}","{{ o.student }}","{{ o.student.student_number }}","{{ o.reason }}","{{ o.when }}","{{ o.agree }}",{% for s in o.sections.all %}"{{ s }}",{% endfor %}
+{% endfor %}

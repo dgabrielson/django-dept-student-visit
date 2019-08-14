@@ -1,0 +1,27 @@
+{% extends 'student_visit/base.html' %}
+
+{# ########################################### #}
+
+{% block head_subtitle %}Student visit - Reason list{% endblock %}
+{% block title %}Reason list{% endblock %}
+   
+{# ########################################### #}     
+        
+{% block student_visit_content %}
+    <ul>
+        {% for object in object_list %}
+            <li>
+                <a href="{{ object.get_absolute_url }}">
+                    {{ object }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}            
+
+{# ########################################### #}
+
+{% block student_visit_extra_content %}
+{% endblock %}
+
+{# ########################################### #}

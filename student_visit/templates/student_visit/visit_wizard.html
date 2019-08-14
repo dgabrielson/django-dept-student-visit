@@ -1,0 +1,85 @@
+{% extends 'student_visit/base.html' %}
+
+{# ########################################### #}
+
+{% block head_subtitle %}Student visit - {{ reason }}{% endblock %}
+{% block title %}{{ reason }}{% endblock %}
+
+{# ########################################### #}
+
+{% block html_head %}
+{{ block.super }}
+{{ wizard.form.media }}
+{% endblock %}
+
+{# ########################################### #}
+
+
+{% block student_visit_content %}
+    {% if wizard_step == "2" %}
+        {% block i_agree_text %}
+            <h3>
+                Notice Regarding Collection, Use, and Disclosure of Personal
+                Information by the University
+            </h3>
+            <p>
+                Your personal information is being collected under the authority
+                of The University of Manitoba Act.
+                The information you provide will be used by the University for
+                the purpose of authenticating your identity and eligibility for
+                the services provided by the Math Help Centre, and for conducting
+                program evaluation.
+                Your personal information will not be used or disclosed for
+                other purposes, unless permitted by The Freedom of Information
+                and Protection of Privacy Act (FIPPA).
+                If you have any questions about the collection of your personal
+                information, contact the Access &amp; Privacy Office
+                (tel. 204-474-9462), 233 Elizabeth Dafoe Library, University of Manitoba, Winnipeg, MB, R3T 2N2.
+            </p>
+
+            <h3>Consent for Additional Program Evaluation</h3>
+            <p>
+                I hereby give consent to the Math Help Centre to access my final
+                grades for only the related Mathematics courses in which I
+                received services from the Math Help Centre, for the purpose of
+                conducting additional evaluations of the Math Help Centre’s services.
+                For additional information the use of my final grades,
+                please contact the
+                Mathematics Supplementary Resources Coordinator at 204-474-9376.
+            </p>
+
+        {% endblock i_agree_text %}
+    {% endif %}
+    <form enctype="multipart/form-data" action="" method="post" class="form">
+        <table class="table-form">
+            {{ wizard.management_form }}
+            {% if wizard.form.forms %}
+                {{ wizard.form.management_form }}
+                {% for form in wizard.form.forms %}
+                    {% include 'includes/form.html' %}
+                {% endfor %}
+            {% else %}
+                {% include 'includes/form.html' with form=wizard.form %}
+            {% endif %}
+            <tfoot>
+            <tr class="visual-break form-row wizard-ctl">
+                <td class="left">
+                    {% if wizard.steps.prev %}
+                    <button class="wizard-prev" name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">Start over</button>
+                    {% endif %}
+                </td>
+                <td class="right">
+                    <input class="wizard-next" type="submit" value="{% block form_button %}{% if wizard.steps.next %}Next{% else %}DONE{% endif %}{% endblock %}">
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </form>
+{% endblock %}
+
+{# ########################################### #}
+
+{% block student_visit_extra_content %}
+{% endblock %}
+
+{# ########################################### #}

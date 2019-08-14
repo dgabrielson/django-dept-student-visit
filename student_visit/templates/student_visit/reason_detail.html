@@ -1,0 +1,25 @@
+{% extends 'student_visit/base.html' %}
+
+{# ########################################### #}
+
+{% block head_subtitle %}Student visit - {{ object }}{% endblock %}
+{% block title %}{{ object }}{% endblock %}
+   
+{# ########################################### #}     
+        
+{% block student_visit_content %}
+    <div style="text-align: center; font-size: 36px;">
+    <p>
+        <a href="{% url 'studentvisit-visit-wizard' reason_slug=object.slug %}">
+             &rarr; Log your visit
+        </a>
+    </p>
+    </div>
+{% endblock %}            
+
+{# ########################################### #}
+
+{% block student_visit_extra_content %}
+{% endblock %}
+
+{# ########################################### #}

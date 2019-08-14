@@ -1,0 +1,15 @@
+include requirements.txt
+include README.rst
+include LICENSE.txt
+#recursive-include student_visit/static *
+#recursive-include student_visit/templates *
+
+# added by check_manifest.py
+recursive-include student_visit *.html
+
+# added by check_manifest.py
+recursive-include student_visit *.css
+
+# added by check_manifest.py
+recursive-include student_visit *.csv
+recursive-include student_visit *.txt

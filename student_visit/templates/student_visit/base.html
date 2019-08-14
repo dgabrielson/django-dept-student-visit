@@ -1,0 +1,16 @@
+{% extends 'site_base.html' %}
+
+{% block page_title %}{{ block.super }}{% block head_subtitle %}Student visit{% endblock %}{% endblock %}
+{% block page_content_header %}{% block title %}Student visit{% endblock %}{% endblock %}
+
+{% block page_content_body %}
+    <section>
+        {% block student_visit_content %}
+            <p>
+                MyApp Content.
+            </p>
+        {% endblock student_visit_content %}            
+    </section>
+    {% block student_visit_extra_content %}
+    {% endblock student_visit_extra_content %}
+{% endblock page_content_body %}

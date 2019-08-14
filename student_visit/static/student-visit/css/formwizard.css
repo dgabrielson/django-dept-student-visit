@@ -1,0 +1,14 @@
+
+tr.wizard-ctl td.right {
+    width: 24em;
+    text-align: right;
+}
+
+.wizard-next {
+    margin: 0.75em;
+}
+
+.wizard-prev {
+    margin: 0.75em;
+}
+
